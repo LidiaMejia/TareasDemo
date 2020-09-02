@@ -1,0 +1,29 @@
+<!-- 
+    Las Directivas Estructurales sirven para manipular el DOM HTML a través de propiedades de Angular que se colocan como
+    parte del mismo código HTML, así podemos mostrar o no una cantidad de bloques de código a voluntad y de manera dinámica.
+-->
+    <div class="row mb-5">
+        <div *ngFor="let tarea of tareas" class="col-s-12 col-md-6 col-lg-4"> <!-- Directiva Estructural Ciclo For -->
+            <div class="card text-center mt-5">
+                <div class="card-img-top">
+                    <!-- Componente hijo para mostrar tarjetas personalizadas según tipo de tarea. 
+                         Con la propiedad [tipo] le indicamos que recibirá dentro de el información de su componente padre
+                    -->
+                    <app-tareas-img [tipo]="tarea.id_tipo"></app-tareas-img>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{tarea.titulo}}</h5>
+                    <h6>{{tarea.fecha}}</h6>
+                    <p class="card-text">{{tarea.descripcion}}</p>
+
+                    <div class="d-flex justify-content-between align-items-center">
+                        <a class="btn btn-danger mr-3" (click)="deleteTarea(tarea.id_tarea)"> <i class="far fa-trash-alt"></i> </a> 
+                        <a class="btn btn-primary btn-block" routerLink="/tareasform/{{tarea.id_tarea}}">EDITAR TAREA</a>
+                                                             <!-- Concatenar el id de la tarea seleccionada a editar -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
