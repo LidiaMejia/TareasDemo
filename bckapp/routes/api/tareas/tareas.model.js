@@ -68,7 +68,7 @@ module.exports = class
         {
             let query = "INSERT INTO tareas SET ?";
             const result = await db.query(query, [newTarea]);
-            return result;
+            return result.insertId;
         }
         catch(err)
         {

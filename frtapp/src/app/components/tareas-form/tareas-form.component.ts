@@ -100,11 +100,14 @@ export class TareasFormComponent implements OnInit
     {
       //En caso de que se desee borrar algún dato para no mandarlo a la base:
       delete this.tarea.id_tarea;
+      let insertId: number;
 
       //Puede devolver la respuesta del servidor o un error
       this.tareasService.addTarea(this.tarea).subscribe(
         res => { 
           console.log(res);
+          insertId = parseInt(res.toString());
+          console.log("DENTRO: "+insertId);
           this.router.navigate(['/tareas']); //Navegar hacia tareas-list al guardar
         },
         err => console.log(err)
