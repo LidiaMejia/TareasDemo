@@ -1,9 +1,9 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
+var createError  = require('http-errors');
+var express      = require('express');
+var path         = require('path');
 var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var cors = require('cors'); //Uso de cors para comunicación entre ambos servidores (Frontend y Backend)
+var logger       = require('morgan');
+var cors         = require('cors'); //Uso de cors para comunicación entre ambos servidores (Frontend y Backend)
 
 var indexRouter = require('./routes/index');
 var apiRouter   = require('./routes/api');

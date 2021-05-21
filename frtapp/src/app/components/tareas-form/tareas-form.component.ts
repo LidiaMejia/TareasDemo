@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit }      from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router'; //Para redirigir a tareas-list al guardar y obtener parámetros de Rutas
 
 import { TareasService } from '../../services/tareas.service';
-import { Tarea } from '../../types/Tarea';
-import { TipoTarea } from '../../types/TipoTarea';
+import { Tarea }         from '../../types/Tarea';
+import { TipoTarea }     from '../../types/TipoTarea';
 
 @Component({
   selector: 'app-tareas-form',
@@ -14,22 +14,22 @@ import { TipoTarea } from '../../types/TipoTarea';
 export class TareasFormComponent implements OnInit 
 {
   //Propiedades
-  tipos: TipoTarea[];
-  tarea: Tarea;
-  edit: boolean;   //Para validar si esta guardando o editando
+  tipos:  TipoTarea[];
+  tarea:  Tarea;
+  edit:   boolean;   //Para validar si esta guardando o editando
   action: string;  //Texto en el botón si esta guardando o editando (Mejor experiencia de usuario)
 
   //Armar fecha de hoy y colocarla en el "min" de la Fecha de la tarea para una mejor visualización
   //Tipo de dato any (Cualquiera) porque se necesita combinar Date, number y string
   hoy: any;
-  d: any;
-  m: any;
-  y: any;
+  d:   any;
+  m:   any;
+  y:   any;
 
   constructor(private tareasService: TareasService, private router: Router, private activatedRoute: ActivatedRoute)
   {
     //Inicializar datos
-    this.edit = false;
+    this.edit   = false;
     this.action = "Guardar";
 
     /* Como una mejor práctica, Los datos iniciales se colocaron vacíos y el mostrado inicial de los datos en el form se realizó 
@@ -44,9 +44,9 @@ export class TareasFormComponent implements OnInit
 
     //Crear fecha de hoy
     this.hoy = new Date();
-    this.d = this.hoy.getDate();
-    this.m = this.hoy.getMonth() + 1; //+1 porque Enero es 0
-    this.y = this.hoy.getFullYear();
+    this.d   = this.hoy.getDate();
+    this.m   = this.hoy.getMonth() + 1; //+1 porque Enero es 0
+    this.y   = this.hoy.getFullYear();
 
     //Poner un 0 antes en las fechas de un dígito
     if (this.d < 10) 
@@ -73,7 +73,7 @@ export class TareasFormComponent implements OnInit
     //Si hay un id, trae los datos de esa Tarea de la base y le dice al form que va a editar
     if (params.id) 
     {
-      this.edit = true; 
+      this.edit   = true; 
       this.action = "Actualizar";
 
       this.tareasService.getTarea(params.id).subscribe(

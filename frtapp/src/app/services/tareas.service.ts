@@ -2,7 +2,7 @@ import { Injectable }  from '@angular/core';
 import { HttpClient }  from '@angular/common/http'; //Clase que permite hacer las peticiones http
 
                                                    /** TIPOS DE DATOS CON LOS MISMOS NOMBRES DE LA BASE!! **/
-import { Tarea } from '../types/Tarea';            //Importar Tipo de Dato 'Tarea' para ser más específicos con el código
+import { Tarea }     from '../types/Tarea';            //Importar Tipo de Dato 'Tarea' para ser más específicos con el código
 import { TipoTarea } from '../types/TipoTarea';    //Importar Tipo de Dato 'Tipo de Tarea'
 
 @Injectable({

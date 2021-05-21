@@ -10,6 +10,7 @@ export class TareasImgComponent implements OnInit
 {
   //Propiedades
   @Input() tipo: number;
+
   clase: string;
   icono: string;
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TareasService }     from '../../services/tareas.service';
-import { Tarea } from '../../types/Tarea';
+import { Tarea }             from '../../types/Tarea';
 
 @Component({
   selector: 'app-tareas-list',

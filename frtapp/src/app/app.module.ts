@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';       //Módulos para ac
 import { HttpClientModule }     from '@angular/common/http';  //Para interacción Cliente-Servidor
 import { FormsModule }          from '@angular/forms';        //Para Data Binding
 
-import { TareasService } from './services/tareas.service'; //Servicio con los Métodos de solicitudes al servidor en el Backend
+import { TareasService }        from './services/tareas.service'; //Servicio con los Métodos de solicitudes al servidor en el Backend
 
 import { AppComponent }         from './app.component'; 
 import { NavigationComponent }  from './components/navigation/navigation.component';
@@ -15,8 +15,8 @@ import { TareasImgComponent }   from './components/tareas-img/tareas-img.compone
 //RUTAS
 const routes: Routes = [
   { path: '', redirectTo: '/tareas', pathMatch: 'full' }, //patchMatch full para que busque la ruta completa que coincide con la indicada
-  { path: 'tareas', component: TareasListComponent },
-  { path: 'tareasform', component: TareasFormComponent },
+  { path: 'tareas',         component: TareasListComponent },
+  { path: 'tareasform',     component: TareasFormComponent },
   { path: 'tareasform/:id', component: TareasFormComponent } //:id significa que tendrá un parámetro
 ];
 
